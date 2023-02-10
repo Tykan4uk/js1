@@ -7,6 +7,82 @@
     <title>JS 1</title>
 </head>
 <body>
-    
+    <script>
+        // quadratic
+        {
+            let a = +window.prompt('Enter a:');
+            let b = +window.prompt('Enter b:');
+            let c = +window.prompt('Enter c:');
+
+            if (a) {
+                let d = Math.pow(b, 2) - 4 * a * c;
+
+                if (d > 0) {
+                    let x1 = (-b + Math.sqrt(d)) / (2 * a);
+                    let x2 = (-b - Math.sqrt(d)) / (2 * a);
+
+                    window.alert(`x1=${x1}, x2=${x2}`);
+                }
+                else {
+                    d == 0
+                        ? window.alert(`x1=x2=${-b / (2 * a)}`)
+                        : window.alert(`No solution`);
+                }
+            }
+            else {
+                window.alert('Non quadratic');
+            }
+        }
+
+        // factorial
+        {
+            let number = +window.prompt('Enter number:');
+
+            if (!isNaN(number)) {
+                let result = number;
+
+                for (let i = 2; i < number; i++) {
+                result *= i;
+                }
+
+                window.alert(`Factorial of ${number} - ${result}`);
+            }
+            else {
+                window.alert('Is not number');
+            }
+        }
+
+        // fibonacci
+        {
+            let number = +window.prompt('Enter number:');
+
+            if (!isNaN(number)) {
+                if (number == 0 || number == 1) {
+                    number == 0
+                        ? console.log('0')
+                        : console.log('0, 1');
+                }
+                else {
+                    let arr = [0, 1];
+
+                    for (let i = 2; i <= number; i++) {
+                        arr.push(arr[i-1] + arr[i-2]);
+                    }
+
+                    let result = '0, 1';
+
+                    for (let i = 2; i < arr.length; i++) {
+                        result += ', ' + arr[i];
+                    }
+
+                    console.log(result);
+                }
+            }
+            else {
+                window.alert('Is not number');
+            }
+        }
+
+    </script>
 </body>
 </html>
